@@ -1,7 +1,9 @@
 #!/bin/bash
 
-vga=$(xrandr --query | sed -n "s|^VGA-1\s\([a-z]*\).*$|\1|p")
-hdmi=$(xrandr --query | sed -n "s|^HDMI-1\s\([a-z]*\).*$|\1|p")
+. $HOME/.config/utilities/check_monitor.sh
+
+vga=$(check_monitor "VGA-1")
+hdmi=$(check_monitor "HDMI-1")
 
 if [[ "$hdmi" = "connected" || "$vga" == "connected" ]]
 then
@@ -31,4 +33,4 @@ then
 fi	
 
 # Replace with your own wallpaper
-feh --bg-fill Pictures/wallpapers/mountains.jpg
+feh --bg-fill $HOME/Pictures/wallpapers/mountains.jpg
