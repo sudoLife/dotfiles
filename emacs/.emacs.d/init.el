@@ -1,5 +1,5 @@
 ;; init.el
-;;(server-start)
+(server-start)
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -155,7 +155,8 @@
 ;;(set-frame-font "Monaco 15" nil t)
 ;;(set-frame-font "Roboto Mono 14")
 ;;(set-frame-font "Anonymous Pro 17" nil t)
-(set-frame-font "Source Code Pro 11")
+;;(set-frame-font "Source Code Pro 11")
+(setq default-frame-alist '((font . "Source Code Pro 11")))
 ;;
 ;;(set-frame-font "bitocra13" nil t)
 ;;(set-frame-font "RobotoMono Nerd Font 13")
