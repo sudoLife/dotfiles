@@ -280,7 +280,24 @@
   :requires (irony))
 ;; Load with `irony-mode` as a grouped backend
 
+
+(use-package company-php)
+
+(use-package php-mode
+  :config
+  (add-hook 'php-mode-hook '(lambda ()
+                            (setq tab-width 4
+                                  indent-tabs-mode t)
+                            (c-set-style "symfony2")
+                            ))
+  (add-hook 'php-mode-hook
+			'(lambda ()
+			   (company-mode t)
+			   (add-to-list 'company-backends 'company-ac-php-backend )))
+  )
+
 ;;Company mode
+
 
 (use-package company
   :no-require t
@@ -291,11 +308,6 @@
   (add-to-list
     'company-backends '(company-irony-c-headers company-irony))
 
-  (add-hook 'php-mode-hook
-			'(lambda ()
-			   (require 'company-php)
-			   (company-mode t)
-			   (add-to-list 'company-backends 'company-ac-php-backend )))
 
 
   (defun company-my-php-backend (command &optional arg &rest ignored)
@@ -434,7 +446,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-	(linum+ elpy flycheck-irony company-irony company-irony-c-headers irony use-package mu4e-alert mu4e-maildirs-extension multiple-cursors engine-mode helm helm-ebdb magit yasnippet web-mode rainbow-delimiters projectile lua-mode js2-mode impatient-mode google-translate flycheck emmet-mode cyberpunk-theme company-web company-php beacon autopair auto-complete abyss-theme)))
+	(php-mode linum+ elpy flycheck-irony company-irony company-irony-c-headers irony use-package mu4e-alert mu4e-maildirs-extension multiple-cursors engine-mode helm helm-ebdb magit yasnippet web-mode rainbow-delimiters projectile lua-mode js2-mode impatient-mode google-translate flycheck emmet-mode cyberpunk-theme company-web company-php beacon autopair auto-complete abyss-theme)))
  '(send-mail-function (quote mailclient-send-it)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
