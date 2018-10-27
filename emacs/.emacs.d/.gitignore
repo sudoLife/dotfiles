@@ -3,3 +3,4 @@ irony/*
 projectile-bookmarks.eld
 auto-save-list/*
 snippets/*
+lisp/mu4e-config.el
