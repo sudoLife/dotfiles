@@ -223,7 +223,7 @@
       indent-tabs-mode t)
 ;; (add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-state 1)))
 (add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-hungry-state)))
-(add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-newline)))
+;; (add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-newline)))
 (add-hook 'c-mode-common-hook '(lambda () (subword-mode)))
 
 ;; irony
@@ -348,7 +348,8 @@
 
 (use-package projectile
   :config
-  (projectile-global-mode)
+  (projectile-mode 1)
+  (define-key projectile-mode-map (kbd "C-c C-p") 'projectile-command-map)
   )
 
 (use-package magit
@@ -375,13 +376,29 @@
   (setq web-mode-enable-current-element-highlight t)
   )
 
+(add-hook 'html-mode-hook
+          (lambda()
+            (setq sgml-basic-offset 4)
+            (setq indent-tabs-mode t)))
+
 
 (use-package emmet-mode
   :config
   (add-hook 'web-mode-hook 'emmet-mode)
   (add-hook 'html-mode-hook 'emmet-mode)
   (add-hook 'css-mode-hook 'emmet-mode)
-)
+  )
+
+(use-package com-css-sort
+  :after (css-mode)
+  :config
+  (setq com-css-sort-sort-type 'alphabetic-sort)
+  ;; Sort attributes inside block.
+  (define-key css-mode-map (kbd "C-k s") #'com-css-sort-attributes-block)
+
+  ;; Sort attributes through the whole document.
+  (define-key css-mode-map (kbd "C-k d") #'com-css-sort-attributes-document)
+  )
 
 (use-package js2-mode
   :config
@@ -393,6 +410,7 @@
 ;; E - M A I L
 ;; -------------
 (require 'mu4e-config)
+;; mu4e-view-save url is bounded to 'k'
 ;; k is a keybinding for links
 ;; ---------------
 ;; L U A  C O D E
@@ -423,8 +441,6 @@
 (require 'ox-odt nil t)
 
 (setq org-agenda-files (quote ("~/projects/org")))
-
-                                        ;my prefer identation
 (setq org-startup-indented t)
 
 ;;logging stuff
@@ -444,9 +460,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(magit-log-arguments (quote ("--graph" "--color" "--decorate" "-n256")))
  '(package-selected-packages
    (quote
-	(php-mode linum+ elpy flycheck-irony company-irony company-irony-c-headers irony use-package mu4e-alert mu4e-maildirs-extension multiple-cursors engine-mode helm helm-ebdb magit yasnippet web-mode rainbow-delimiters projectile lua-mode js2-mode impatient-mode google-translate flycheck emmet-mode cyberpunk-theme company-web company-php beacon autopair auto-complete abyss-theme)))
+	(com-css-sort html-mode php-mode linum+ elpy flycheck-irony company-irony company-irony-c-headers irony use-package mu4e-alert mu4e-maildirs-extension multiple-cursors engine-mode helm helm-ebdb magit yasnippet web-mode rainbow-delimiters projectile lua-mode js2-mode impatient-mode google-translate flycheck emmet-mode cyberpunk-theme company-web company-php beacon autopair auto-complete abyss-theme)))
  '(send-mail-function (quote mailclient-send-it)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
