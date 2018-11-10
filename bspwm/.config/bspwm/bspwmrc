@@ -2,6 +2,8 @@
 
 xsetroot -cursor_name left_ptr &
 
+redshift -l 54.740253:25.279191 &
+
 setxkbmap -layout us,ru -variant ,typewriter -option "grp:caps_toggle,terminate:ctrl_alt_b" &
 
 compton --config ~/.config/compton/compton.conf &
@@ -27,7 +29,7 @@ bspc rule -a Screenkey manage=off
 #bspc rule -a Emacs desktop='^2'
 #bspc rule -a Pidgin desktop='^6'
 
-bash ~/.config/bspwm/monitor.sh 
+bash ~/.config/bspwm/monitor.sh
 
 
 
