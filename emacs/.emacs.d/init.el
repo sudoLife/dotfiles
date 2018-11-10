@@ -2,7 +2,7 @@
 (server-start)
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
+;; just comment it out by adding a semicolon to the start of tline.
 ;; You may delete these explanatory comments.
 ;;; Code:
 (require 'package)
@@ -44,6 +44,10 @@
               100)
          '(85 . 50) '(100 . 100)))))
 
+
+(add-to-list 'load-path "~/.emacs.d/evil")
+(require 'evil)
+(evil-mode 1)
 
 
 (setq show-paren-style 'expression);;Подсветка скобок
