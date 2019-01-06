@@ -2,35 +2,38 @@
 
 . $HOME/.config/utilities/check_monitor.sh
 
-vga=$(check_monitor "VGA-1")
-hdmi=$(check_monitor "HDMI-1")
+vga="VGA-1"
+hdmi="HDMI-1"
 
-if [[ "$hdmi" = "connected" || "$vga" == "connected" ]]
+vga_status=$(check_monitor $vga)
+hdmi_status=$(check_monitor $hdmi)
+
+if [[ "$hdmi_status" = "connected" || "$vga_status" == "connected" ]]
 then
 	bspc monitor LVDS-1 --remove
 	xrandr --output LVDS-1 --off
 	
-	if [ "$hdmi" = "connected" ]
+	if [ "$hdmi_status" = "connected" ]
 	then
-		xrandr --output HDMI-1 --mode 1920x1080
-		bspc monitor HDMI-1 -d I II III IV V VI
-		bspc monitor --focus HDMI-1
+		xrandr --output $hdmi --mode 1920x1080
+		bspc monitor $hdmi -d I II III IV V VI
+		bspc monitor --focus $hdmi
 	fi
 
-	if [ "$vga" == "connected" ]
+	if [ "$vga_status" == "connected" ]
 	then
-		bspc monitor VGA-1 -d I II III IV V VI
-		bspc monitor --focus VGA-1
+		bspc monitor $vga -d I II III IV V VI
+		bspc monitor --focus $vga
 	fi
 
-	if [[ "$hdmi" = "connected" && "$vga" = "connected" ]]
+	if [[ "$hdmi_status" = "connected" && "$vga_status" = "connected" ]]
 	then
-		xrandr --output HDMI-1 --right-of VGA-1
-		bspc monitor VGA-1 -d I II III
-		bspc monitor HDMI-1 -d IV V VI 
-		bspc monitor --focus HDMI-1
+		xrandr --output $hdmi --right-of $vga
+		bspc monitor $vga -d I II III
+		bspc monitor $hdmi -d IV V VI 
+		bspc monitor --focus $hdmi
 	fi
 fi	
 
 # Replace with your own wallpaper
-feh --bg-fill $HOME/Pictures/wallpapers/mountains.jpg
+feh --bg-fill $HOME/Pictures/background/grand-canyon-contrast.jpg

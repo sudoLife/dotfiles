@@ -61,7 +61,7 @@
 
 
 (setq browse-url-browser-function 'browse-url-generic)
-(setq browse-url-generic-program "firefox-quantum")
+(setq browse-url-generic-program "firefox")
 
 
 ;; startup message off
@@ -160,7 +160,7 @@
 ;;(set-frame-font "Roboto Mono 14")
 ;;(set-frame-font "Anonymous Pro 17" nil t)
 ;;(set-frame-font "Source Code Pro 11")
-(setq default-frame-alist '((font . "Source Code Pro 11")))
+(setq default-frame-alist '((font . "Office Code Pro 12")))
 ;;
 ;;(set-frame-font "bitocra13" nil t)
 ;;(set-frame-font "RobotoMono Nerd Font 13")
@@ -222,12 +222,14 @@
 
 
 ;; c++
-(setq c-default-style "gnu"
+(setq c-default-style "k&r"
       c-basic-offset 4
       indent-tabs-mode t)
 ;; (add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-state 1)))
-(add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-hungry-state)))
-;; (add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-newline)))
+;;(add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-hungry-state)))
+;;(add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-newline)))
+(add-hook 'c-mode-common-hook '(lambda () (c-toggle-electric-state)))
+(add-hook 'c-mode-common-hook '(lambda () (c-toggle-syntactic-indentation)))
 (add-hook 'c-mode-common-hook '(lambda () (subword-mode)))
 
 ;; irony
@@ -413,8 +415,12 @@
 ;; --------------
 ;; E - M A I L
 ;; -------------
+<<<<<<< HEAD
 (require 'mu4e-config)
 ;; mu4e-view-save url is bounded to 'k'
+=======
+;;(require 'mu4e-config)
+>>>>>>> arch
 ;; k is a keybinding for links
 ;; ---------------
 ;; L U A  C O D E
@@ -444,7 +450,13 @@
 (global-set-key "\e\eb" 'org-iswitchb)
 (require 'ox-odt nil t)
 
+<<<<<<< HEAD
 (setq org-agenda-files (quote ("~/projects/org")))
+=======
+(setq org-agenda-files (quote ("~/org")))
+
+                                        ;my prefer identation
+>>>>>>> arch
 (setq org-startup-indented t)
 
 ;;logging stuff
