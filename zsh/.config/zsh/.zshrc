@@ -101,7 +101,7 @@ setopt HIST_IGNORE_ALL_DUPS
 # PROMPT='%n@%M'
 
 source $ZDOTDIR/prompt.sh
-source $ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 autoload -Uz compinit
 compinit
