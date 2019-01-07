@@ -45,12 +45,7 @@
          '(85 . 50) '(100 . 100)))))
 
 
-(add-to-list 'load-path "~/.emacs.d/evil")
-(require 'evil)
-(evil-mode 1)
-
-
-(setq show-paren-style 'expression);;Подсветка скобок
+(setq show-paren-style 'expression)
 (show-paren-mode 2)
 
 (setq make-backup-files     nil)
@@ -415,12 +410,7 @@
 ;; --------------
 ;; E - M A I L
 ;; -------------
-<<<<<<< HEAD
-(require 'mu4e-config)
-;; mu4e-view-save url is bounded to 'k'
-=======
 ;;(require 'mu4e-config)
->>>>>>> arch
 ;; k is a keybinding for links
 ;; ---------------
 ;; L U A  C O D E
@@ -450,13 +440,8 @@
 (global-set-key "\e\eb" 'org-iswitchb)
 (require 'ox-odt nil t)
 
-<<<<<<< HEAD
-(setq org-agenda-files (quote ("~/projects/org")))
-=======
 (setq org-agenda-files (quote ("~/org")))
 
-                                        ;my prefer identation
->>>>>>> arch
 (setq org-startup-indented t)
 
 ;;logging stuff
