@@ -221,10 +221,10 @@
       c-basic-offset 4
       indent-tabs-mode t)
 ;; (add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-state 1)))
-;;(add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-hungry-state)))
+(add-hook 'c-mode-common-hook '(lambda () (c-toggle-hungry-state)))
 ;;(add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-newline)))
-(add-hook 'c-mode-common-hook '(lambda () (c-toggle-electric-state)))
-(add-hook 'c-mode-common-hook '(lambda () (c-toggle-syntactic-indentation)))
+;;(add-hook 'c-mode-common-hook '(lambda () (c-toggle-electric-state)))
+;;(add-hook 'c-mode-common-hook '(lambda () (c-toggle-syntactic-indentation)))
 (add-hook 'c-mode-common-hook '(lambda () (subword-mode)))
 
 ;; irony
