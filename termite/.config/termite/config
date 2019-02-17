@@ -1,11 +1,11 @@
 [options]
-#allow_bold = true
+allow_bold = false
 #audible_bell = false
+#bold_is_bright = true
 #clickable_url = true
 #dynamic_title = true
-font = Hermit 10
+font = Roboto Mono 11.7
 #fullscreen = true
-#geometry = 640x480
 #icon_name = terminal
 #mouse_autohide = false
 #scroll_on_output = false
@@ -18,13 +18,13 @@ scrollback_lines = 10000
 #hyperlinks = false
 
 # $BROWSER is used by default if set, with xdg-open as a fallback
-browser = xdg-open
+#browser = xdg-open
 
 # "system", "on" or "off"
 cursor_blink = on
 
 # "block", "underline" or "ibeam"
-cursor_shape = block
+cursor_shape = ibeam
 
 # Hide links that are no longer valid in url select overlay mode
 #filter_unmatched_urls = true
@@ -36,83 +36,44 @@ cursor_shape = block
 #size_hints = false
 
 # "off", "left" or "right"
-#scrollbar = off
+scrollbar = off
 
 [colors]
-
-# special
-foreground      = #00ff00
-foreground_bold = #00ff00
-cursor          = #00ff00
-background      = rgba(0, 0, 0, 0.8)
-
-# black
-color0  = #000000
-color8  = #212121
-
-# red
-color1  = #c00000
-color9  = #ff8080
-
-# green
-color2  = #00c000
-color10 = #80ff80
-
-# yellow
-color3  = #c0c000
-color11 = #ffff88
-
-# blue
-color4  = #0c00c0
-color12 = #99ccff
-
-# magenta
-color5  = #aa00aa
-color13 = #b14cc2
-
-# cyan
-color6  = #00aaaa
-color14 = #9bffff
-
-# white
-color7  = #ffffff
-color15 = #d0d0d0
-
 # If both of these are unset, cursor falls back to the foreground color,
 # and cursor_foreground falls back to the background color.
-#cursor = #dcdccc
+cursor = #dddddd
 #cursor_foreground = #dcdccc
 
-#foreground = #dcdccc
+foreground = #dddddd
 #foreground_bold = #ffffff
-#background = #3f3f3f
+background = #353438
 
 # 20% background transparency (requires a compositor)
 #background = rgba(63, 63, 63, 0.8)
 
 # If unset, will reverse foreground and background
-#highlight = #2f2f2f
+highlight = #2f2f2f
 
 # Colors from color0 to color254 can be set
-# color0 = #3f3f3f
-# color1 = #705050
-# color2 = #60b48a
-# color3 = #dfaf8f
-# color4 = #506070
-# color5 = #dc8cc3
-# color6 = #8cd0d3
-# color7 = #dcdccc
-# color8 = #709080
-# color9 = #dca3a3
-# color10 = #c3bf9f
-# color11 = #f0dfaf
-# color12 = #94bff3
-# color13 = #ec93d3
-# color14 = #93e0e3
-# color15 = #ffffff
+color0 = #413f44
+color1 = #ba4b5f
+color2 = #667d50
+color3 = #b28c65
+color4 = #82a8ba
+color5 = #686381
+color6 = #77999c
+color7 = #dddddd
+color8 = #838286
+color9 = #c66a6d
+color10 = #7aab6d
+color11 = #bc9e7f
+color12 = #a4babf
+color13 = #797a91
+color14 = #9ebdc1
+color15 = #dddddd
 
 [hints]
-font = Source Code Pro 16
+#font = Monospace 12
 #foreground = #dcdccc
 #background = #3f3f3f
 #active_foreground = #e68080
