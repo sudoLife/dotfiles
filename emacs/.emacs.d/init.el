@@ -231,19 +231,19 @@
 
 
 
-(use-package irony
-  :config
-  (add-hook 'c++-mode-hook 'irony-mode)
-  (unless (irony--find-server-executable) (call-interactively #'irony-install-server))
-  (add-hook 'c++-mode-hook 'my-irony-mode-on)
-  (add-hook 'c-mode-hook 'my-irony-mode-on)
-  (setq-default irony-cdb-compilation-databases '(irony-cdb-libclang
-                                                  irony-cdb-clang-complete))
-  (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-  (defun my-irony-mode-on ()
-  (when (member major-mode irony-supported-major-modes)
-    (irony-mode 1)))
-  )
+;; (use-package irony
+;;   :config
+;;   (add-hook 'c++-mode-hook 'irony-mode)
+;;   (unless (irony--find-server-executable) (call-interactively #'irony-install-server))
+;;   (add-hook 'c++-mode-hook 'my-irony-mode-on)
+;;   (add-hook 'c-mode-hook 'my-irony-mode-on)
+;;   (setq-default irony-cdb-compilation-databases '(irony-cdb-libclang
+;;                                                   irony-cdb-clang-complete))
+;;   (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+;;   (defun my-irony-mode-on ()
+;;   (when (member major-mode irony-supported-major-modes)
+;;     (irony-mode 1)))
+;;   )
 
 
 ;; Python
@@ -465,6 +465,7 @@
  '(package-selected-packages
    (quote
 	(com-css-sort html-mode php-mode linum+ elpy flycheck-irony company-irony company-irony-c-headers irony use-package mu4e-alert mu4e-maildirs-extension multiple-cursors engine-mode helm helm-ebdb magit yasnippet web-mode rainbow-delimiters projectile lua-mode js2-mode impatient-mode google-translate flycheck emmet-mode cyberpunk-theme company-web company-php beacon autopair auto-complete abyss-theme)))
+ '(safe-local-variable-values (quote ((eval c-set-offset (quote innamespace) 0))))
  '(send-mail-function (quote mailclient-send-it)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
