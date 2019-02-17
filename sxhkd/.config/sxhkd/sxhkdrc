@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -show combi
+	rofi -show run
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -45,6 +45,11 @@ super + g
 # set the window state
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# Switch focus between the windows of the current desktop
+# (for floating windows)
+super + {_,shift + } Tab
+    bspc node -f {next,prev}.local
 
 # set the node flags
 super + ctrl + {m,x,y,z}
