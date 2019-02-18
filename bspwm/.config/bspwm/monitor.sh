@@ -36,4 +36,4 @@ then
 fi	
 
 # Replace with your own wallpaper
-feh --bg-fill $HOME/Pictures/background/grand-canyon-contrast.jpg
+feh --bg-fill $HOME/Pictures/background/wallhaven-beach.png
