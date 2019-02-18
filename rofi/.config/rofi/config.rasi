@@ -145,7 +145,8 @@ configuration {
 	/* background: transparent; */
 	background-color: #353438;
 	window-border: #353438;
-	foreground: #dddddd;
+	text-color: #dddddd;
+	/* foreground: #dddddd; */
 	background-active: #7f6759;
 }
 
