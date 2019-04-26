@@ -15,33 +15,34 @@ print_info() {
 
     info "OS" distro
     #info "Model" model
-    info "Kernel" kernel
+    #info "Kernel" kernel
     info "Uptime" uptime
-	info "Users" users
+	#info "Users" users
     #info "Packages" packages
-    info "Shell" shell
-    info "Resolution" resolution
+    #info "Shell" shell
+    #info "Resolution" resolution
     #info "DE" de
     #info "WM" wm
     #info "WM Theme" wm_theme
     #info "Theme" theme
     #info "Icons" icons
-    info "Terminal" term
-    info "Terminal Font" term_font
+    #info "Terminal" term
+    #info "Terminal Font" term_font
     #info "CPU" cpu
     #info "GPU" gpu
 	
-	info underline
+	#info underline
 
-	prin "$(color 1)Date: $(color 2)$(date)"
+	
     info "Memory" memory
     info "CPU" cpu_usage
     info "Disk" disk
     info "Battery" battery
- #   info "Font" font
-#    info "Song" song
-    info "Local IP" local_ip
-    info "Public IP" public_ip
+	prin "$(color 4)Date: $(color 7)$(date)"
+	#info "Font" font
+	#info "Song" song
+    #info "Local IP" local_ip
+    #info "Public IP" public_ip
 	#    info "Birthday" birthday
 	# ^^^^^^^^^ this doesn't work
 
@@ -591,7 +592,7 @@ ascii="distro"
 #       Change this to 'arch_old' or 'ubuntu_old' to use the old logos.
 # NOTE: Ubuntu has flavor varients.
 #       Change this to 'Lubuntu', 'Xubuntu', 'Ubuntu-GNOME' or 'Ubuntu-Budgie' to use the flavors.
-ascii_distro="gnu"
+ascii_distro="arch"
 
 # Ascii Colors
 #
