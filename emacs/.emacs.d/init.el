@@ -30,26 +30,35 @@
 
 
 ;; Transparency
-(set-frame-parameter (selected-frame) 'alpha '(85 . 50))
-(add-to-list 'default-frame-alist '(alpha . (85 . 50)))
-(defun toggle-transparency ()
-  (interactive)
-  (let ((alpha (frame-parameter nil 'alpha)))
-    (set-frame-parameter
-     nil 'alpha
-     (if (eql (cond ((numberp alpha) alpha)
-                    ((numberp (cdr alpha)) (cdr alpha))
-                    ;; Also handle undocumented (<active> <inactive>) form.
-                    ((numberp (cadr alpha)) (cadr alpha)))
-              100)
-         '(85 . 50) '(100 . 100)))))
+(set-frame-parameter (selected-frame) 'alpha '(75 . 75))
+(add-to-list 'default-frame-alist '(alpha . (75 . 75)))
+;; (defun toggle-transparency ()
+;;   (interactive)
+;;   (let ((alpha (frame-parameter nil 'alpha)))
+;;     (set-frame-parameter
+;;      nil 'alpha
+;;      (if (eql (cond ((numberp alpha) alpha)
+;;                     ((numberp (cdr alpha)) (cdr alpha))
+;;                     ;; Also handle undocumented (<active> <inactive>) form.
+;;                     ((numberp (cadr alpha)) (cadr alpha)))
+;;               100)
+;;          '(85 . 50) '(100 . 100)))))
 
+
+(set-fringe-mode '(0 . 0))
+(add-hook 'window-configuration-change-hook
+          (lambda ()
+            (set-window-margins (car (get-buffer-window-list (current-buffer) nil t)) 1 1)))
 
 (setq show-paren-style 'expression)
 (show-paren-mode 2)
 
 (setq make-backup-files     nil)
 (setq make-save-list-file-name   nil)
+
+(use-package visual-regexp-steroids)
+(use-package visual-regexp
+  :requires visual-regexp-steroids)
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (require 'init-key-bindings)
@@ -73,9 +82,9 @@
 (windmove-default-keybindings 'meta)
 ;;(setq word-wrap          t)
 (global-visual-line-mode t)
-(setq scroll-step 1)
-(setq scroll-margin 10)
-(setq scroll-conservatively 10000)
+;; (setq scroll-step 1)
+;; (setq scroll-margin 10)
+;; (setq scroll-conservatively 10000)
 (defalias 'yes-or-no-p 'y-or-n-p)
 (setq x-select-enable-clipboard t)
 ;;(setq-default indent-tabs-mode nil)
@@ -181,8 +190,8 @@
 ;; linum mode
 ;;(use-package linum)
 (require 'linum+)
-(setq linum-format 'dynamic)
-(global-linum-mode 1)
+(setq linum-format " %d ")
+(global-linum-mode 0)
 (column-number-mode t)
 (line-number-mode t)
 
@@ -247,10 +256,12 @@
 
 
 ;; Python
-(use-package elpy
-  :config
-  (elpy-enable)
-  )
+;; (use-package elpy
+;;   :config
+;;   (elpy-enable)
+;;   )
+
+(use-package arduino-mode)
 
 (use-package company
   :config
@@ -271,6 +282,11 @@
   :requires (flycheck irony)
   :config
   (eval-after-load 'flycheck '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup)))
+
+(use-package minions
+  :config
+  (minions-mode 1)
+  )
 
 (use-package irony-eldoc
   :requires (eldoc irony)
@@ -358,6 +374,11 @@
   (
    ("C-x g" . magit-status)
    ))
+
+(use-package smooth-scrolling
+  :config
+  (smooth-scrolling-mode 1)
+  )
 
 
 ;; Rainbow delimiters
@@ -455,6 +476,11 @@
               (sequence "QUOTE(Q!)" "QUOTED(D!)" "|" "ACHIEVED(A@)" "EXPIRED(E@)" "REJECTED(R@)")
               (sequence "OPEN(O!)" "|" "CLOSED(C!)"))))
 
+(use-package org-bullets
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  )
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -464,7 +490,7 @@
  '(magit-log-arguments (quote ("--graph" "--color" "--decorate" "-n256")))
  '(package-selected-packages
    (quote
-	(com-css-sort html-mode php-mode linum+ elpy flycheck-irony company-irony company-irony-c-headers irony use-package mu4e-alert mu4e-maildirs-extension multiple-cursors engine-mode helm helm-ebdb magit yasnippet web-mode rainbow-delimiters projectile lua-mode js2-mode impatient-mode google-translate flycheck emmet-mode cyberpunk-theme company-web company-php beacon autopair auto-complete abyss-theme)))
+	(visual-regexp-steroids visual-regexp visual-regex ns-auto-titlebar minions smooth-scrolling org-bullets arduino-mode com-css-sort html-mode php-mode linum+ elpy flycheck-irony company-irony company-irony-c-headers irony use-package mu4e-alert mu4e-maildirs-extension multiple-cursors engine-mode helm helm-ebdb magit yasnippet web-mode rainbow-delimiters projectile lua-mode js2-mode impatient-mode google-translate flycheck emmet-mode cyberpunk-theme company-web company-php beacon autopair auto-complete abyss-theme)))
  '(safe-local-variable-values (quote ((eval c-set-offset (quote innamespace) 0))))
  '(send-mail-function (quote mailclient-send-it)))
 (custom-set-faces
