@@ -115,7 +115,10 @@
 
 
 ;; themes
-(use-package cyberpunk-theme)
+;;(use-package cyberpunk-theme)
+(use-package monochrome-theme)
+;;(require 'monochrome-theme)
+;;(load-file	"~/.emacs.d/monochrome-theme.el")
 ;;(require 'hober-theme)
 ;;(load-theme 'default-theme)
 ;;(load-file "~/.emacs.d/themes/dark-emacs-theme.el")
@@ -164,7 +167,7 @@
 ;;(set-frame-font "Roboto Mono 14")
 ;;(set-frame-font "Anonymous Pro 17" nil t)
 ;;(set-frame-font "Source Code Pro 11")
-(setq default-frame-alist '((font . "Office Code Pro 12")))
+(setq default-frame-alist '((font . "-FBI -Input-normal-normal-condensed-*-*-*-*-*-m-0-iso10646-1")))
 ;;
 ;;(set-frame-font "bitocra13" nil t)
 ;;(set-frame-font "RobotoMono Nerd Font 13")
