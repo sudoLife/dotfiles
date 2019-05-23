@@ -6,3 +6,4 @@ snippets/*
 lisp/mu4e-config.el
 .mc-lists.el
 url/*
+bookmarks
