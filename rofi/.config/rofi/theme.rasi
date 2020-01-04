@@ -13,9 +13,9 @@
 #window {
     anchor:             center;
     location:           center;
-    width:              1366;               /* change to your resolution width */
-    height:             768;                /* change to your resolution height */
-    padding:            280 400 280 500;    /* top right bot left */
+    width:              100%;
+    height:             100%;
+    padding:            30% 40% 30% 40%;    /* top right bottom left */
     children:           [ mainbox ];
 }
 
