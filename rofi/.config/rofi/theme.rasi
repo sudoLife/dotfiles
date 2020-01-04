@@ -1,0 +1,50 @@
+/**
+ * Author: Johannes Thyssen
+ * Copyright: Johannes Thyssen
+ */
+
+* {
+    background-color:   #000000CC;
+    border-color:       White;
+    text-color:         #85888b;
+    font:               "NotoSansMono 16";
+}
+
+#window {
+    anchor:             center;
+    location:           center;
+    width:              1366;               /* change to your resolution width */
+    height:             768;                /* change to your resolution height */
+    padding:            280 400 280 500;    /* top right bot left */
+    children:           [ mainbox ];
+}
+
+#mainbox {
+    orientation:        vertical;
+    /*children:         [ prompt, entry, listview ];*/
+    children:           [entry, listview];
+    background-color:   #00000000;
+}
+
+#listview {
+    layout:             vertical;
+    spacing:            5px;
+    lines:              100;
+    background-color:   #00000000;
+}
+
+#entry {
+    expand:             false;
+    width:              10em;
+    background-color:   #00000000;
+}
+
+#element {
+    padding:            0px 0px;
+    background-color:   #00000000;
+}
+#element selected {
+    highlight:          bold;
+    text-color:         White;
+    background-color:   #00000000;
+}

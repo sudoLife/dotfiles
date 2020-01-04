@@ -7,7 +7,7 @@ configuration {
 /*	bw: 1;*/
 	location: 2;
 /*	padding: 5;*/
-	yoffset: 64;
+	yoffset: 0;
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
 /*	show-icons: false;*/
@@ -141,40 +141,41 @@ configuration {
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
 
-* {
-	/* background: transparent; */
-	background-color: #353438;
-	window-border: #353438;
-	text-color: #dddddd;
-	/* foreground: #dddddd; */
-	background-active: #7f6759;
-}
+/* * { */
+/* 	/\* background: transparent; *\/ */
+/* 	background-color: #353438; */
+/* 	window-border: #353438; */
+/* 	text-color: #dddddd; */
+/* 	/\* foreground: #dddddd; *\/ */
+/* 	background-active: #7f6759; */
+/* } */
 
-#window {
-	border-radius: 5px;
-	width: 430px;
-	border-color: @window-border;
-	/* background-color: @foreground; */
-}
+/* #window { */
+/* 	border-radius: 5px; */
+/* 	width: 430px; */
+/* 	border-color: @window-border; */
+/* 	/\* background-color: @foreground; *\/ */
+/* } */
 
-#mainbox {
-	margin: 10px;
-}
+/* #mainbox { */
+/* 	margin: 10px; */
+/* } */
 
-#prompt {
-	color: @foreground;
-}
+/* #prompt { */
+/* 	color: @foreground; */
+/* } */
 
-#entry {
-	color: @foreground;
-}
+/* #entry { */
+/* 	color: @foreground; */
+/* } */
 
-#element {
-	color: @foreground;
-	padding: 8px;
-}
+/* #element { */
+/* 	color: @foreground; */
+/* 	padding: 8px; */
+/* } */
 
-#element selected {
-	background-color: @background-active;
-	border-radius: 5px;
-}
+/* #element selected { */
+/* 	background-color: @background-active; */
+/* 	border-radius: 5px; */
+/* } */
+@import "theme.rasi"

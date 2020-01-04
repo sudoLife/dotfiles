@@ -39,39 +39,56 @@ cursor_shape = block
 scrollbar = off
 
 [colors]
-# If both of these are unset, cursor falls back to the foreground color,
-# and cursor_foreground falls back to the background color.
-cursor = #dddddd
-#cursor_foreground = #dcdccc
+# Base16 Icy Dark
+# Author: icyphox (https://icyphox.ga)
 
-foreground = #dddddd
-#foreground_bold = #ffffff
-#background = #353438
+foreground          = #26c6da
+foreground_bold     = #0c7c8c
+cursor              = #0c7c8c
+cursor_foreground   = #021012
+background          = rgba(0, 0, 0, 0.8)
 
-# 20% background transparency (requires a compositor)
-#background = rgba(63, 63, 63, 0.8)
-background = rgba(0, 0, 0, 0.75)
+# 16 color space
 
-# If unset, will reverse foreground and background
-highlight = #2f2f2f
+# Black, Gray, Silver, White
+color0  = #021012
+# color8  = #052e34
+color8 = #0a5c68
+color7  = #095b67
+color15 = #109cb0
 
-# Colors from color0 to color254 can be set
-color0 = #413f44
-color1 = #ba4b5f
-color2 = #667d50
-color3 = #b28c65
-color4 = #82a8ba
-color5 = #686381
-color6 = #77999c
-color7 = #dddddd
-color8 = #838286
-color9 = #c66a6d
-color10 = #7aab6d
-color11 = #bc9e7f
-color12 = #a4babf
-color13 = #797a91
-color14 = #9ebdc1
-color15 = #dddddd
+# Red
+color1  = #16c1d9
+color9  = #16c1d9
+
+# Green
+color2  = #4dd0e1
+color10 = #4dd0e1
+
+# Yellow
+color3  = #80deea
+color11 = #80deea
+
+# Blue
+color4  = #00bcd4
+color12 = #00bcd4
+
+# Purple
+color5  = #00acc1
+color13 = #00acc1
+
+# Teal
+color6  = #26c6da
+color14 = #26c6da
+
+# Extra colors
+color16 = #b3ebf2
+color17 = #0097a7
+color18 = #031619
+color19 = #041f23
+color20 = #064048
+color21 = #0c7c8c
+
 
 [hints]
 #font = Monospace 12

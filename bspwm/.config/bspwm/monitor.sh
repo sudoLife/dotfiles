@@ -36,4 +36,4 @@ then
 fi	
 
 # Replace with your own wallpaper
-feh --bg-fill ~/Pictures/background/wallhaven-cyberpunk_city.png 
+feh --bg-fill ~/Pictures/background/mountains_icy.jpg
