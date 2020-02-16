@@ -1,4 +1,5 @@
 export EDITOR=emacsclient
+export PAGER=more
 alias E="SUDO_EDITOR=\"emacsclient\" sudo -e"
 alias mirror="sudo reflector --protocol https --latest 50 --number 20 --sort rate --save /etc/pacman.d/mirrorlist"
 
